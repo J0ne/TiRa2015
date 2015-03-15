@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -5,6 +6,8 @@
  */
 
 package jaljittaja;
+
+import jaljittajaUI.Verkkonakyma;
 
 /**
  *
@@ -17,7 +20,9 @@ public class Jaljittaja {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.print("Hello");
+        
+        Verkkonakyma vn = new Verkkonakyma(new Verkko());
+        
     }
     
 }
