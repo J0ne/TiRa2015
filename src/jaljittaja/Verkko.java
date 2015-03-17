@@ -13,36 +13,40 @@ package jaljittaja;
  */
 public class Verkko {
 
+    public Verkko(int sivu) {
+        RakennaVerkko(sivu);
+    }
+
     public Solmu[][] Solmut;
 
-    public void RakennaVerkko(int n) {
+    private Verkko RakennaVerkko(int n) {
 
-        int rivit = 4;
-        int sarakkeet = 4;
+        int rivit = n;
+        int sarakkeet = n;
         Solmut = new Solmu[rivit][sarakkeet];
-//        boolean pariton = false;
-//        if(solmujenMaara % 2 != 0){
-//            pariton = true;
-//        }
-        // luodaan ensin solmut (n x n matriisi)    
         for (int i = 0; i < rivit; i++) {
             for (int j = 0; j < sarakkeet; j++) {
-                // luodaan uusi solmu, suunnat ei tiedossa
-                Solmut[i][j] = new Solmu("S[" + i + "," + j + "]", null);
+
+                Solmut[i][j] = new Solmu(i, j, false);
+                
+                //luodaan este
+                if (j > 0 && j % 5 == 0 && (i > 0 && i < 5)) {
+                    Solmut[i][j].OnEste = true;
+                }
             }
         }
-        
+        return this;
     }
 
 }
 /* 
-  4 x 4 
-A--O--O--O
-|  |  |  |
-O--O--O--O
-|  |  |  |
-O--O--M--O
-|  |  |  |
-O--O--O--O
+ 4 x 4 
+ A--O--O--O
+ |  |  |  |
+ O--O--O--O
+ |  |  |  |
+ O--O--M--O
+ |  |  |  |
+ O--O--O--O
 
-*/
+ */

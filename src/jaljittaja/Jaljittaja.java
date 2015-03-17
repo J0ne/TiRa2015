@@ -20,8 +20,13 @@ public class Jaljittaja {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Verkko matriisi = new Verkko(10);
         
-        Verkkonakyma vn = new Verkkonakyma(new Verkko());
+        Polunetsija etsija = new Polunetsija(matriisi);
+        
+        etsija.EtsiLyhinPolku(new Solmu(2, 2, false), new Solmu(7, 6, false));
+        
+        //Verkkonakyma vn = new Verkkonakyma(matriisi);
         
     }
     

@@ -12,60 +12,50 @@ package jaljittaja;
  */
 public class Solmu {
 
-    public Solmu(String Nimi, Kaari[] Suunnat) {
-        this.Nimi = Nimi;
-        this.Suunnat = Suunnat;
+    public Solmu(int x, int y, boolean OnEste) {
+        this.x = x;
+        this.y = y;
+        this.OnEste = OnEste;
     }
 
-
-    /**
-     *
-     * @return
-     */
-    public String getNimi() {
-        return Nimi;
+    public int getX() {
+        return x;
     }
 
-    /**
-     *
-     * @param Nimi
-     */
-    public void setNimi(String Nimi) {
-        this.Nimi = Nimi;
+    public int getY() {
+        return y;
+    }
+    public int x;
+    public int y;
+
+    public int getKustannus() {
+        return Kustannus;
     }
 
-    /**
-     *
-     * @return
-     */
-    public Kaari[] getSuunnat() {
-        return Suunnat;
+    public void setKustannus(int Kustannus) {
+        this.Kustannus = Kustannus;
     }
 
-    /**
-     *
-     * @param Suunnat
-     */
-    public void setSuunnat(Kaari[] Suunnat) {
-        this.Suunnat = Suunnat;
+    public boolean isOnEste() {
+        return OnEste;
     }
 
-    /**
-     * Solmun tunniste. todo: id tms. helpottamaan debuggaamista ym
-     */
-    public String Nimi;
+    public void setOnEste(boolean OnEste) {
+        this.OnEste = OnEste;
+    }
     
-    /**
-     * Suunnat joihin solmusta pääsee. Toistaiseksi max 4 suuntaa
-     * 0 = ylös, 1 = oikealle, 2 = alas, 3 = vasemmalle TODO: voi olla ettei suunnilla ole muuta väliä kuin 
-     * debugatessa / havainnollistettaessa algoritmin toimintaa
-     */
-    public Kaari[] Suunnat;
     
-    public enum suunta{
-        ylos,
-        oikealle,
-        alas,
-        vasemmalle
+    public int Kustannus;
+    
+    public boolean OnEste;
+    
+    public Solmu Edeltaja;
+
+    public Solmu getEdeltaja() {
+        return Edeltaja;
+    }
+
+    public void setEdeltaja(Solmu Edeltaja) {
+        this.Edeltaja = Edeltaja;
     }
 }

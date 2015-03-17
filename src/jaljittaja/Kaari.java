@@ -85,8 +85,5 @@ public class Kaari {
         this.SolmuB = SolmuB;
         this.Paino = Paino;
     }
-    
-    public String toString(){
-    return "[" +this.SolmuA.getNimi() + "] <--> [" + this.SolmuB.getNimi() + "]";
-    }
+   
 }
